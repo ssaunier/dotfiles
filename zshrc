@@ -23,7 +23,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git sublime zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
-export PATH='~/.rbenv/shims:/usr/local/bin:/usr/local/share:/usr/local/opt:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
+export PATH='~/.rbenv/shims:/usr/local/bin:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
 
 # Disable auto update of title name (for tmux, see http://superuser.com/a/320316)
 DISABLE_AUTO_TITLE=true
