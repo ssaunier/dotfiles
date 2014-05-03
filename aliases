@@ -25,3 +25,7 @@ alias bower='noglob bower'
 
 export S=~/code/ssaunier
 export W=~/code/lewagon
+
+# Open Sublime Text with a very short command!
+alias s='st .'
+
