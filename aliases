@@ -11,10 +11,6 @@ alias tunnelx='[[ -f /tmp/sshuttle.pid ]] && kill $(cat /tmp/sshuttle.pid) && ec
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
-# Rails bundler shorter
-alias be='bundle exec'
-alias bi='bundle install'
-
 # Github Awesomeness
 alias org-pr='hub pull-request -h \
   `git remote -v | grep -oE -m1 "github.com:([^/]*)" \
