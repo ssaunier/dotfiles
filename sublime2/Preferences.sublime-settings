@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"detect_indentation": false,
 	"draw_white_space": true,
 	"file_exclude_patterns":
@@ -44,7 +44,7 @@
 		"bower_components",
 		".grunt"
 	],
-	"font_size": 12.0,
+	"font_size": 13.0,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
