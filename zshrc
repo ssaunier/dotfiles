@@ -6,8 +6,9 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #
-# eastwood is a fine alternative
-ZSH_THEME="gallois"
+# ZSH_THEME="gallois"
+ZSH_THEME="robbyrussell"
+RPS1='[$(ruby_prompt_info)]$EPS1'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -20,7 +21,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(gitfast last-working-dir sublime brew bundler zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(gitfast rbenv last-working-dir sublime brew zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 export PATH='~/.rbenv/shims:/usr/local/bin:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
@@ -47,3 +48,6 @@ bindkey '^[OB' history-substring-search-down
 # UTF-8 is our default encoding
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# AWS Command line
+source /usr/local/share/zsh/site-functions/_aws
