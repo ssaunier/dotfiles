@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(gitfast rbenv last-working-dir sublime brew zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
-export PATH='/usr/local/bin:/usr/local/var/rbenv/shims:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
+export PATH='./bin:/usr/local/bin:/usr/local/var/rbenv/shims:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
 
 # Disable auto update of title name (for tmux, see http://superuser.com/a/320316)
 DISABLE_AUTO_TITLE=true
@@ -37,6 +37,9 @@ export RBENV_ROOT=/usr/local/var/rbenv
 
 # To enable shims and autocompletion add to your profile:
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Docker
+$(boot2docker shellinit 2>/dev/null)
 
 # Gather handy aliases
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
