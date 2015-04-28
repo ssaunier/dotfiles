@@ -54,3 +54,4 @@ export LC_ALL=en_US.UTF-8
 
 # AWS Command line
 source /usr/local/share/zsh/site-functions/_aws
+export BUNDLER_EDITOR="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl' -a"
