@@ -8,7 +8,7 @@
 
 [color]
   branch = auto
-  diff = auto
+  diff = always
   interactive = auto
   status = auto
   ui = auto
@@ -18,7 +18,7 @@
   remote = yellow
 
 [core]
-  editor = vim
+	editor = '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl' -n -w
   pager = less -FRSX
   mergeoptions = --no-edit
 
@@ -59,8 +59,25 @@
   tool = Kaleidoscope
 
 [push]
-	default = simple
+  default = simple
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[branch "master"]
+	mergeoptions = --no-edit
+
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

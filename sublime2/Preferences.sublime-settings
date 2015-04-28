@@ -42,9 +42,10 @@
 		".sass-cache",
 		"dist",
 		"bower_components",
-		".grunt"
+		".grunt",
+		"build"
 	],
-	"font_size": 13.0,
+	"font_size": 14.0,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
