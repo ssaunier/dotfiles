@@ -1,13 +1,19 @@
+backup() {
+  target=$1
+  if [ -e "$target" ]; then           # Does the config file already exist?
+    if [ ! -L "$target" ]; then       # as a pure file?
+      mv "$target" "$target.backup"   # Then backup it
+      echo "-----> Moved your old $target config file to $target.backup"
+    fi
+  fi
+}
+
+#!/bin/zsh
 for name in *; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     if [[ ! "$name" =~ '\.sh$' ]] && [ "$name" != 'README.md' ]; then
-      if [ -e "$target" ]; then           # Does the config file already exist?
-        if [ ! -L "$target" ]; then       # as a pure file?
-          mv "$target" "$target.backup"   # Then backup it
-          echo "-----> Moved your old $target config file to $target.backup"
-        fi
-      fi
+      backup $target
 
       if [ ! -e "$target" ]; then
         echo "-----> Symlinking your new $target"
@@ -20,22 +26,6 @@ done
 REGULAR="\\033[0;39m"
 YELLOW="\\033[1;33m"
 GREEN="\\033[1;32m"
-
-# Setup a machine for Sublime Text 2
-SUBLIME_USER_DIR=~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
-SUBLIME_PREFERENCES_FILE=Preferences.sublime-settings
-if [ -d "$SUBLIME_USER_DIR" ]; then
-  if [ ! -e "$SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE.backup" ]; then
-    mv "$SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE" "$SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE.backup"
-    echo "-----> Old sublime preferences file backuped to $SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE.backup"
-  fi
-
-  if [ ! -L "$SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE" ]; then
-    ln -s "$PWD/sublime2/$SUBLIME_PREFERENCES_FILE" "$SUBLIME_USER_DIR/$SUBLIME_PREFERENCES_FILE"
-  fi
-else
-  echo "You ${YELLOW}do not have${REGULAR} Sublime Text 2 installed."
-fi
 
 # zsh plugins
 CURRENT_DIR=`pwd`
@@ -51,23 +41,32 @@ if [ ! -d "$ZSH_PLUGINS_DIR/zsh-history-substring-search" ]; then
 fi
 cd "$CURRENT_DIR"
 
-# zshenv
-if [ ! -e "$HOME/.zshenv" ]; then
-  touch "$HOME/.zshenv"
+setopt nocasematch
+if [[ ! `uname` =~ "darwin" ]]; then
+  git config --global core.editor "subl -n -w $@ >/dev/null 2>&1"
+  echo 'export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"' >> zshrc
+else
+  git config --global core.editor "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w"
+  bundler_editor="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+  echo "export BUNDLER_EDITOR=\"${bundler_editor}\"" >> zshrc
 fi
-echo "-----> You should now open your ${GREEN}~/.zshenv${REGULAR} and add custom env variables."
-echo "       You can start with:"
-echo "       ${YELLOW}export EMAIL=#{your_email}${REGULAR}"
 
-# zshenv
-if [ ! -e "$HOME/.aliases" ]; then
-  touch "$HOME/.aliases"
+# Sublime Text
+if [[ ! `uname` =~ "darwin" ]]; then
+  SUBL_PATH=~/.config/sublime-text-3
+else
+  SUBL_PATH=~/Library/Application\ Support/Sublime\ Text\ 3
 fi
-echo ""
-echo "-----> Then you can open your ${GREEN}~/.aliases${REGULAR} and add powerful aliases, such as"
-echo "       ${YELLOW}alias be='bundle exec'${REGULAR}"
-echo "       ${YELLOW}alias bi='bundle install'${REGULAR}"
-echo "       ${YELLOW}alias rtest='be rake test && be rspec spec --color && open coverage/index.html'${REGULAR}"
+mkdir -p $SUBL_PATH/Packages/User $SUBL_PATH/Installed\ Packages
+backup "$SUBL_PATH/Packages/User/Preferences.sublime-settings"
+curl https://sublime.wbond.net/Package%20Control.sublime-package > $SUBL_PATH/Installed\ Packages/Package\ Control.sublime-package
+ln -s $PWD/Preferences.sublime-settings $SUBL_PATH/Packages/User/Preferences.sublime-settings
+ln -s $PWD/Package\ Control.sublime-settings $SUBL_PATH/Packages/User/Package\ Control.sublime-settings
 
-echo ""
-echo "-----> Don't forget to source your ${GREEN}~/.zshrc${REGULAR} when you are done."
+zsh ~/.zshrc
+
+if [[ `uname` =~ "darwin" ]]; then
+  echo "Quit your terminal and restart it (⌘ + Q)."
+else
+  echo "Quit your terminal and restart it (Alt + F4)."
+fi

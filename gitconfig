@@ -1,14 +1,10 @@
 [user]
+  email = sebastien.saunier@gmail.com
   name = Sebastien Saunier
-  mail = seb@saunier.me
-  email = seb@saunier.me
-
-[github]
-  user = ssaunier
 
 [color]
   branch = auto
-  diff = always
+  diff = auto
   interactive = auto
   status = auto
   ui = auto
@@ -18,9 +14,7 @@
   remote = yellow
 
 [core]
-	editor = '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl' -n -w
   pager = less -FRSX
-  mergeoptions = --no-edit
 
 [alias]
   co = checkout
@@ -28,11 +22,9 @@
   br = branch
   ci = commit
   fo = fetch origin
-  mom = merge origin master
   d = !git --no-pager diff
   dt  = difftool
   stat = !git --no-pager diff --stat
-  s = !git status --short --untracked-files=all
 
   # Clean merged branches
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
@@ -49,35 +41,12 @@
   # Removes a file from the index
   unstage = reset HEAD --
 
-[difftool "Kaleidoscope"]  # Very nice diff tool for mac: http://www.kaleidoscopeapp.com
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-
-[difftool]
-  prompt = false
-
-[diff]
-  tool = Kaleidoscope
+[help]
+  autocorrect = 1
 
 [push]
-  default = simple
-
-[filter "media"]
-  required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+	default = simple
 
 [branch "master"]
-	mergeoptions = --no-edit
+  mergeoptions = --no-edit
 
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
-[merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
