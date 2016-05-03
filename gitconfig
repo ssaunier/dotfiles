@@ -1,6 +1,7 @@
 [user]
-  email = sebastien.saunier@gmail.com
+	email = seb@saunier.me
   name = Sebastien Saunier
+	signingkey = 8741D118
 
 [color]
   branch = auto
@@ -21,6 +22,7 @@
   co = checkout
   st = status -sb
   br = branch
+  commit = commit -S
   ci = commit
   fo = fetch origin
   d = !git --no-pager diff
@@ -57,3 +59,9 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[commit]
+	gpgsign = true
