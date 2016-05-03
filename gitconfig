@@ -1,7 +1,7 @@
 [user]
-	email = seb@saunier.me
+  email = seb@saunier.me
   name = Sebastien Saunier
-	signingkey = 8741D118
+  signingkey = 8741D118
 
 [color]
   branch = auto
@@ -16,13 +16,12 @@
 
 [core]
   pager = less -FRSX
-	editor = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w
+	editor = vim
 
 [alias]
   co = checkout
   st = status -sb
   br = branch
-  commit = commit -S
   ci = commit
   fo = fetch origin
   d = !git --no-pager diff
