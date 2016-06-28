@@ -1,23 +1,35 @@
 {
-  "bootstrapped": true,
-  "in_process_packages":
-  [
-  ],
-  "installed_packages":
-  [
-    "AdvancedNewFile",
-    "All Autocomplete",
-    "ApplySyntax",
-    "BracketHighlighter",
-    "DocBlockr",
-    "Dockerfile Syntax Highlighting",
-    "Emmet",
-    "Git",
-    "GitGutter",
-    "JSX",
-    "Package Control",
-    "Ruby on Rails snippets",
-    "SCSS",
-    "Theme - SoDaReloaded"
-  ]
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"All Autocomplete",
+		"ApplySyntax",
+		"Better CoffeeScript",
+		"Bind Zone files",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"Crystal",
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"Emmet",
+		"Floobits",
+		"Git",
+		"GitGutter",
+		"JSX",
+		"LaTeXTools",
+		"Material Theme",
+		"Open Finder",
+		"Package Control",
+		"Pretty JSON",
+		"Ruby on Rails snippets",
+		"Ruby Slim",
+		"RubyMotionBuilder",
+		"SCSS",
+		"SFTP"
+	]
 }

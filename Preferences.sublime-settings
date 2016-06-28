@@ -1,34 +1,45 @@
 {
-  "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
-  "detect_indentation": false,
-  "draw_white_space": true,
-  "ensure_newline_at_eof_on_save": true,
-  "folder_exclude_patterns":
-  [
-    "tmp",
-    "log",
-    ".git",
-    "_site",
-    ".bundle",
-    ".sass-cache",
-    "build"
-  ],
-  "highlight_modified_tabs": true,
-  "hot_exit": false,
-  "ignored_packages":
-  [
-    "Vintage"
-  ],
-  "remember_open_files": false,
-  "rulers":
-  [
-    80
-  ],
-  "tab_size": 2,
-  "theme": "SoDaReloaded Dark.sublime-theme",
-  "translate_tabs_to_spaces": true,
-  "trim_automatic_white_space": true,
-  "trim_trailing_white_space_on_save": true,
-  "use_tab_stops": true,
-  "wordWrap": false
+	"always_show_minimap_viewport": false,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"detect_indentation": false,
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		"tmp",
+		"log",
+		".git",
+		"_site",
+		".bundle",
+		".sass-cache",
+		"build",
+		"node_modules"
+	],
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 18,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"LaTeXTools",
+		"Vintage"
+	],
+	"material_theme_contrast_mode": true,
+	"overlay_scroll_bars": "enabled",
+	"remember_open_files": false,
+	"rulers":
+	[
+		80
+	],
+	"tab_size": 2,
+	"theme": "Material-Theme-Darker.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true,
+	"wordWrap": false
 }
