@@ -20,12 +20,11 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 18,
+	"font_size": 14,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"LaTeXTools",
 		"Vintage"
 	],
 	"material_theme_contrast_mode": true,

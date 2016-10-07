@@ -10,26 +10,19 @@
 		"ApplySyntax",
 		"Better CoffeeScript",
 		"Bind Zone files",
-		"BracketHighlighter",
 		"Color Highlighter",
 		"ColorPicker",
 		"Crystal",
-		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"Emmet",
-		"Floobits",
+		"ERB Snippets",
 		"Git",
 		"GitGutter",
 		"JSX",
-		"LaTeXTools",
 		"Material Theme",
 		"Open Finder",
 		"Package Control",
 		"Pretty JSON",
-		"Ruby on Rails snippets",
-		"Ruby Slim",
-		"RubyMotionBuilder",
-		"SCSS",
-		"SFTP"
+		"SCSS"
 	]
 }
