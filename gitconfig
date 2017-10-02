@@ -1,7 +1,7 @@
 [user]
 	email = seb@saunier.me
-	name = Sebastien Saunier
-  signingkey = 8741D118
+	name = Sébastien Saunier
+	signingkey = 85A782408741D118
 
 [color]
   branch = auto
@@ -63,6 +63,6 @@
 	smudge = git-lfs smudge %f
 	required = true
 [commit]
-	gpgsign = true
+	gpgsign = false
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
