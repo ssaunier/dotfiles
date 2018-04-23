@@ -1,8 +1,9 @@
 {
 	"always_show_minimap_viewport": false,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+	"color_scheme": "Packages/DA CS/One Dark.tmTheme",
 	"detect_indentation": false,
+	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
 	[
@@ -26,7 +27,7 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 17,
+	"font_size": 15,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
@@ -40,8 +41,9 @@
 	[
 		80
 	],
+	"skin": "DA UI/Elegant",
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "DA.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,

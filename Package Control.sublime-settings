@@ -8,14 +8,22 @@
 		"A File Icon",
 		"AdvancedNewFile",
 		"All Autocomplete",
+		"ApplySyntax",
 		"Babel",
+		"DA CS",
+		"DA UI",
+		"Dotfiles Syntax Highlighting",
 		"Emmet",
 		"ERB Snippets",
 		"Git",
 		"GitGutter",
 		"GitHub Flavored Markdown Preview",
+		"JsPrettier",
 		"Package Control",
 		"Pretty JSON",
-		"SCSS"
+		"Python 3",
+		"React ES6 Snippets",
+		"SCSS",
+		"TOML"
 	]
 }
