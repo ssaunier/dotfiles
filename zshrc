@@ -14,6 +14,9 @@ export HOMEBREW_NO_ANALYTICS=1
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default, disable https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh#L49
 
+# Add pipenv to the $PATH
+export PATH="$(python3 -m site --user-base)/bin:${PATH}"
+
 # Load rbenv
 export PATH="~/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
