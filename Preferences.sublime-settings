@@ -1,8 +1,6 @@
 {
-	"always_show_minimap_viewport": false,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/DA CS/One Dark.tmTheme",
-	"detect_indentation": false,
+	"color_scheme": "Packages/DA CS/Tomorrow Dark.tmTheme",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -19,7 +17,8 @@
 		"node_modules",
 		"dist",
 		"public/packs",
-		"coverage"
+		"coverage",
+		"__pycache__"
 	],
 	"font_face": "Source Code Pro",
 	"font_options":
@@ -27,11 +26,12 @@
 		"gray_antialias",
 		"subpixel_antialias"
 	],
-	"font_size": 15,
+	"font_size": 14,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"Python",
 		"Vintage"
 	],
 	"material_theme_contrast_mode": true,

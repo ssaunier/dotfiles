@@ -16,14 +16,15 @@
 		"Emmet",
 		"ERB Snippets",
 		"Git",
-		"GitGutter",
-		"GitHub Flavored Markdown Preview",
+		"Indent XML",
 		"JsPrettier",
+		"Latest Migration",
 		"Package Control",
 		"Pretty JSON",
-		"Python 3",
-		"React ES6 Snippets",
 		"SCSS",
-		"TOML"
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-pylint",
+		"SublimeLinter-rubocop"
 	]
 }
