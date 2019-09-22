@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful plugins for Rails development with Sublime Text
-plugins=(last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(last-working-dir common-aliases sublime docker-compose zsh-syntax-highlighting history-substring-search)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -17,15 +17,17 @@ unalias rm # No interactive rm by default, disable https://github.com/robbyrusse
 # Latex
 export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 
-# Load rbenv
+# Load rbenv (Ruby)
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-# Node LTS
-export PATH="/usr/local/opt/node@10/bin:${PATH}"
+# Load nvm (Node)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Anaconda binaries
-export PATH="${HOME}/anaconda3/bin:${PATH}"
+alias jupyter=/Users/seb/anaconda3/bin/jupyter
+# export PATH="${HOME}/anaconda3/bin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
