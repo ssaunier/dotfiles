@@ -26,8 +26,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 # Anaconda binaries
-alias jupyter=/Users/seb/anaconda3/bin/jupyter
-# export PATH="${HOME}/anaconda3/bin:${PATH}"
+export PATH="${HOME}/anaconda3/bin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
