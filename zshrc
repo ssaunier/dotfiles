@@ -21,12 +21,16 @@ export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
+# Load pyenv (Python)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+
 # Load nvm (Node)
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
-# Anaconda binaries
-export PATH="${HOME}/anaconda3/bin:${PATH}"
+# # Anaconda binaries
+# export PATH="${HOME}/anaconda3/bin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
