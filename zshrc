@@ -1,8 +1,8 @@
 ZSH=$HOME/.oh-my-zsh
 
-# You can change the theme with another one:
-#   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="robbyrussell"
+# SPACESHIP_VENV_SHOW=false
+# ZSH_THEME="spaceship"
 
 # Useful plugins for Rails development with Sublime Text
 plugins=(last-working-dir common-aliases sublime docker-compose zsh-syntax-highlighting history-substring-search)
@@ -17,20 +17,22 @@ unalias rm # No interactive rm by default, disable https://github.com/robbyrusse
 # Latex
 export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 
-# Load rbenv (Ruby)
-export PATH="${HOME}/.rbenv/bin:${PATH}"
+# Load rbenv (Ruby version manager)
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-# Load pyenv (Python)
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
+# Load pyenv (Python version manager)
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
-# Load nvm (Node)
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+# Load 'lewagon' virtualenv for the Data Bootcamp
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
 
 # # Anaconda binaries
 # export PATH="${HOME}/anaconda3/bin:${PATH}"
+
+# Load nvm (Node)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
