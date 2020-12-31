@@ -25,7 +25,6 @@ type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-
 
 # Load 'lewagon' virtualenv for the Data Bootcamp
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-# pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
 
 # # Anaconda binaries
 # export PATH="${HOME}/anaconda3/bin:${PATH}"
