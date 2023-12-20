@@ -1,7 +1,7 @@
 [user]
 	email = seb@saunier.me
 	name = Sébastien Saunier
-	signingkey = 85A782408741D118
+	signingkey = 28BA6F5699744EDFF5A6645D34DD89AB96CB057E
 
 [color]
   branch = auto
@@ -29,7 +29,7 @@
   stat = !git --no-pager diff --stat
 
   # Clean merged branches
-  sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
+	sweep = !sh -c 'git branch --merged | grep -v "^*" | xargs git branch -d'
 
   # http://www.jukie.net/bart/blog/pimping-out-git-log
   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
@@ -64,7 +64,7 @@
 	required = true
 	process = git-lfs filter-process
 [commit]
-	gpgsign = false
+	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
 [merge]
@@ -72,3 +72,7 @@
 [mergetool "diffmerge"]
 	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = master
