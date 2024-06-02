@@ -1,5 +1,6 @@
 {
 	"bootstrapped": true,
+	"debug": true,
 	"in_process_packages":
 	[
 	],
@@ -8,23 +9,21 @@
 		"A File Icon",
 		"AdvancedNewFile",
 		"All Autocomplete",
-		"ApplySyntax",
-		"Babel",
-		"DA CS",
-		"DA UI",
-		"Dotfiles Syntax Highlighting",
+		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
 		"Emmet",
 		"ERB Snippets",
 		"Git",
 		"Indent XML",
-		"JsPrettier",
 		"Latest Migration",
+		"MagicPython",
+		"Material Theme",
 		"Package Control",
-		"Pretty JSON",
 		"SCSS",
+		"Solarized Color Scheme",
 		"SublimeLinter",
-		"SublimeLinter-eslint",
-		"SublimeLinter-pylint",
-		"SublimeLinter-rubocop"
-	]
+		"SublimeLinter-contrib-standardrb",
+		"Theme - DAneo",
+		"TOML",
+	],
 }
