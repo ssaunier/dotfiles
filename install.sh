@@ -29,6 +29,7 @@ fi
 # 2. Config files. ~/.gitconfig is NOT linked: the workspace startup script writes a GitHub token
 #    into it, which must never land in this public repo. Git also reads ~/.config/git/config.
 link zshrc "$HOME/.zshrc"
+link zshenv "$HOME/.zshenv"
 link aliases "$HOME/.aliases"
 link vimrc "$HOME/.vimrc"
 link gitconfig "$HOME/.config/git/config"
