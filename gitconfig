@@ -1,0 +1,40 @@
+[user]
+  name = Sébastien Saunier
+  email = seb@saunier.me
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[core]
+  pager = less -FRSX
+  editor = vim
+
+[alias]
+  co = checkout
+  st = status -sb
+  br = branch
+  ci = commit
+  fo = fetch origin
+  d = !git --no-pager diff
+  stat = !git --no-pager diff --stat
+  sweep = !sh -c 'git branch --merged | grep -v "^*" | xargs git branch -d'
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+  m = checkout master
+  unstage = reset HEAD --
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = simple
+  autoSetupRemote = true
+
+[pull]
+  rebase = false
+
+[init]
+  defaultBranch = master

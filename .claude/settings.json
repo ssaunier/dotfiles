@@ -1,0 +1,32 @@
+{
+  "skillOverrides": {
+    "chdb-datastore": "off",
+    "clickhouse-js-node-coding": "off",
+    "clickhouse-js-node-rowbinary": "off",
+    "clickhouse-js-node-troubleshooting": "off",
+    "clickhouse-managed-postgres-rca": "off",
+    "clickstack-otel-collector": "off",
+    "infra-clickhouse": "off",
+    "infra-postgres": "off",
+    "plugin-authoring": "off",
+    "anthropic-skills:built-in-browser": "off",
+    "anthropic-skills:chrome-browser": "off",
+    "anthropic-skills:computer-use": "off",
+    "anthropic-skills:docs": "off",
+    "anthropic-skills:docx": "off",
+    "anthropic-skills:pptx": "off",
+    "anthropic-skills:xlsx": "off",
+    "anthropic-skills:google-workspace": "off",
+    "anthropic-skills:morning": "off",
+    "anthropic-skills:import-memory": "off",
+    "chdb-sql": "name-only",
+    "clickhouse-architecture-advisor": "name-only",
+    "grilling": "name-only",
+    "dataviz": "name-only",
+    "claude-api": "name-only",
+    "keybindings-help": "name-only",
+    "anthropic-skills:pdf": "name-only",
+    "anthropic-skills:deep-research": "name-only",
+    "anthropic-skills:skill-creator": "name-only"
+  }
+}
