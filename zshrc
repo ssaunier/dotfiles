@@ -50,8 +50,8 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr ' %F{yellow}✗'
 zstyle ':vcs_info:git:*' stagedstr ' %F{yellow}✗'
-zstyle ':vcs_info:git:*' formats '%F{blue}git:(%F{red}%b%F{blue})%u%c%f '
-zstyle ':vcs_info:git:*' actionformats '%F{blue}git:(%F{red}%b|%a%F{blue})%u%c%f '
+zstyle ':vcs_info:git:*' formats '%F{12}git:(%F{9}%b%F{12})%u%c%f '
+zstyle ':vcs_info:git:*' actionformats '%F{12}git:(%F{9}%b|%a%F{12})%u%c%f '
 precmd() { vcs_info }
 setopt prompt_subst
 PROMPT='%F{magenta}${CODER_WORKSPACE_NAME:+☁ }%f%(?:%F{green}➜:%F{red}➜) %F{cyan}%c%f ${vcs_info_msg_0_}'
