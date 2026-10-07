@@ -38,6 +38,15 @@ link gitconfig "$HOME/.config/git/config"
 git config --global user.name "$(git config -f "$DIR/gitconfig" user.name)"
 git config --global user.email "$(git config -f "$DIR/gitconfig" user.email)"
 
+# docker-fleet's submodules sit on working branches ahead of their pins; keep them out of the
+# fleet root's git status. Inside each submodule, git status is unaffected.
+fleet="$HOME/docker-fleet"
+if [ -f "$fleet/.gitmodules" ]; then
+  git -C "$fleet" config -f .gitmodules --get-regexp '^submodule\..*\.path$' | while read -r _ path; do
+    git -C "$fleet" config "submodule.$path.ignore" all
+  done
+fi
+
 mkdir -p "$HOME/.zsh/completions" "$HOME/.zsh/cache"
 command -v herdr >/dev/null && herdr completion zsh > "$HOME/.zsh/completions/_herdr" 2>/dev/null || true
 command -v gh >/dev/null && gh completion -s zsh > "$HOME/.zsh/completions/_gh" 2>/dev/null || true

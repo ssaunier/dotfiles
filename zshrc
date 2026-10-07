@@ -52,6 +52,12 @@ zstyle ':vcs_info:git:*' unstagedstr ' %F{yellow}✗'
 zstyle ':vcs_info:git:*' stagedstr ' %F{yellow}✗'
 zstyle ':vcs_info:git:*' formats '%F{12}git:(%F{9}%b%F{12})%u%c%f '
 zstyle ':vcs_info:git:*' actionformats '%F{12}git:(%F{9}%b|%a%F{12})%u%c%f '
+zstyle ':vcs_info:git*+set-message:*' hooks respect-submodule-ignore
++vi-respect-submodule-ignore() {
+  [[ -n ${hook_com[unstaged]} ]] && git diff --no-ext-diff --quiet 2>/dev/null && hook_com[unstaged]=''
+  [[ -n ${hook_com[staged]} ]] && git diff --cached --no-ext-diff --quiet 2>/dev/null && hook_com[staged]=''
+  return 0
+}
 precmd() { vcs_info }
 setopt prompt_subst
 PROMPT='%F{magenta}${CODER_WORKSPACE_NAME:+☁ }%f%(?:%F{green}➜:%F{red}➜) %F{cyan}%c%f ${vcs_info_msg_0_}'
