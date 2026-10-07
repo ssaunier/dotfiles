@@ -6,6 +6,3 @@ alias dc='docker compose'
 alias dcl='docker compose logs -f --tail 100'
 alias dcps='docker compose ps --format "table {{.Service}}\t{{.Status}}"'
 alias rails-c='docker compose exec backend bin/rails console'
-
-alias ll='ls -alF'
-alias la='ls -A'
