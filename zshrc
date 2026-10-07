@@ -8,9 +8,11 @@ plugins=(last-working-dir common-aliases sublime zsh-syntax-highlighting history
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
+# Prevent telemetry from gh client
+export GH_TELEMETRY=false
+
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
-unalias lt # we need `lt` for https://github.com/localtunnel/localtunnel
 unalias rm # No interactive rm by default, disable https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh#L49
 
 # GPG
@@ -19,14 +21,18 @@ export GPG_TTY=$(tty)
 # Latex
 export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 
+# PG
+export PATH="${PATH}:/usr/local/opt/postgresql@18/bin"
+
 # Go
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # Load rbenv (Ruby version manager)
-type -a rbenv > /dev/null && eval "$(rbenv init -)" && RPROMPT+='[💎 $(rbenv version-name)]'
+eval "$(rbenv init -)" && RPROMPT+='[💎 $(rbenv version-name)]'
 
 # ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded. Linking Rubies to Homebrew's OpenSSL 1.1 (which is upgraded):
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBY_CONFIGURE_OPTS="--enable-yjit --with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RUBYOPT="--yjit"
 
 # Python
 init_pyenv() {
@@ -60,7 +66,7 @@ init_nvm() {
   }
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
-  RPROMPT+='[ $(nvm version | sed "s/^v//" )]'
+  RPROMPT+='[🔖 $(nvm version | sed "s/^v//" )]'
 }
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
@@ -77,3 +83,7 @@ export LC_ALL=en_US.UTF-8
 
 # `bundle open` with Sublime Text
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+
+# Local seb
+export PATH="${PATH}:/Users/seb/.local/bin"
+. "$HOME/.local/bin/env"

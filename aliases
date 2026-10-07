@@ -1,20 +1,14 @@
 # Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
 # Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+alias serve='python3 -m http.server'  # Or python -m SimpleHTTPServer :)
 
+# Connectivity
 alias wtf='ping 8.8.8.8'
+alias dns='networksetup -setdnsservers Ethernet 1.1.1.1; networksetup -setdnsservers Wi-Fi 1.1.1.1'
+alias dns_reset='networksetup -setdnsservers Ethernet empty; networksetup -setdnsservers Wi-Fi empty'
 
 # Sublime Merge
 alias smerge="/Applications/Sublime\ Merge.app/Contents/SharedSupport/bin/smerge ."
-alias vpn="sshuttle --dns -vr lt 0/0"
-
-# Git
-alias gprunesquashmerged='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
-alias gbranches='for branch in `git branch | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r'
-
-alias issues="gh api orgs/lewagon/teams/engineering/members --jq '.[].login' | GH_PAGER=cat xargs -I login  sh -c 'echo \"\033[0;36mlogin\033[m\"; gh search issues --owner lewagon --state open --assignee login; echo \"\n\n\"'"
-

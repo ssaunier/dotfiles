@@ -7,7 +7,6 @@
 	"installed_packages":
 	[
 		"A File Icon",
-		"AdvancedNewFile",
 		"All Autocomplete",
 		"BracketHighlighter",
 		"Dockerfile Syntax Highlighting",
@@ -16,14 +15,11 @@
 		"Git",
 		"Indent XML",
 		"Latest Migration",
-		"MagicPython",
 		"Material Theme",
 		"Package Control",
-		"SCSS",
 		"Solarized Color Scheme",
 		"SublimeLinter",
-		"SublimeLinter-contrib-standardrb",
-		"Theme - DAneo",
-		"TOML",
+		"SublimeLinter-rubocop",
+		"Vue",
 	],
 }

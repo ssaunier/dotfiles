@@ -1,4 +1,4 @@
-{
+ {
   "hot_exit": false,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"detect_indentation": false,
@@ -25,6 +25,9 @@
 		"__pycache__",
     ".jekyll-cache"
 	],
+  "file_exclude_patterns": [
+    ".forestadmin-schema.json"
+	],
 	"font_size": 14,
 	"highlight_modified_tabs": true,
 	/*"hot_exit": false,*/
@@ -46,4 +49,8 @@
 	"update_check": true,
 	"use_tab_stops": true,
 	"word_wrap": false,
+	"index_files": false,
+	"file_icon_theme":
+	[
+	],
 }
