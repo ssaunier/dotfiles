@@ -4,5 +4,5 @@ alias gbranches='for branch in `git branch | grep -v HEAD`;do echo -e `git show 
 # Docker fleet (run from ~/docker-fleet)
 alias dc='docker compose'
 alias dcl='docker compose logs -f --tail 100'
-alias dcps='docker compose ps --format "table {{.Service}}\t{{.Status}}"'
+alias dcps='docker compose ps -a --format "table {{.Service}}\t{{.Status}}"'
 alias rails-c='docker compose exec backend bin/rails console'
