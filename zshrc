@@ -22,6 +22,9 @@ SAVEHIST=50000
 setopt share_history hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
 setopt auto_cd auto_pushd pushd_ignore_dups interactive_comments no_beep
 
+eval "$(dircolors -b)"
+alias ls='ls --color=auto'
+
 # Completion: menu you can arrow through, case-insensitive and partial-word matching,
 # coloured like ls, grouped with headers.
 fpath=("$HOME/.zsh/completions" $fpath)
