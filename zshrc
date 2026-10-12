@@ -70,3 +70,5 @@ PROMPT='%F{magenta}${CODER_WORKSPACE_NAME:+☁ }%f%(?:%F{green}➜:%F{red}➜) %
 [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Must be sourced last.
 [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$PATH:/home/coder/.local/bin"
+export TZ=Europe/Paris
