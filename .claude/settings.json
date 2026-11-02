@@ -1,4 +1,9 @@
 {
+  "permissions": {
+    "additionalDirectories": [
+      "/home/coder/.claude"
+    ]
+  },
   "skillOverrides": {
     "chdb-datastore": "off",
     "clickhouse-js-node-coding": "off",
