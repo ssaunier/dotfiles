@@ -37,6 +37,12 @@ link gitconfig "$HOME/.config/git/config"
 # workspace may write there cannot shadow it.
 git config --global user.name "$(git config -f "$DIR/gitconfig" user.name)"
 git config --global user.email "$(git config -f "$DIR/gitconfig" user.email)"
+# Sign with the workspace's own passphrase-less key (kept in ~/.gnupg), when there is one.
+key=$(gpg --list-secret-keys --with-colons "$(git config --global user.email)" 2>/dev/null | awk -F: '/^fpr/ {print $10; exit}')
+if [ -n "$key" ]; then
+  git config --global user.signingkey "$key"
+  git config --global commit.gpgsign true
+fi
 
 # docker-fleet's submodules sit on working branches ahead of their pins; keep them out of the
 # fleet root's git status. Inside each submodule, git status is unaffected.
