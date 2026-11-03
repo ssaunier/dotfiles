@@ -17,6 +17,8 @@ coder dotfiles -y https://github.com/ssaunier/dotfiles.git --branch refrag/coder
   `~/.gitconfig` is never linked: the workspace writes a GitHub token into it.
 - **vim** with a small `vimrc`.
 - **Claude Code**: runs the team's [Refrag/dotfiles](https://github.com/Refrag/dotfiles) first, then merges
-  `.claude/settings.json` (my `skillOverrides`) on top.
+  `.claude/settings.json` (model, plugins, status line, `skillOverrides`) on top, and links `.claude/CLAUDE.md`.
+- **Private half**: clones [ssaunier/refrag-coder](https://github.com/ssaunier/refrag-coder) (private: Claude memories,
+  Refrag-internal settings) to `~/.refrag-coder` and runs its `install.sh`. Skipped without access.
 
 Public repo: nothing secret goes here.

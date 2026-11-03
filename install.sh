@@ -67,3 +67,9 @@ mkdir -p "$HOME/.claude"
 [ -f "$settings" ] || echo '{}' > "$settings"
 jq -s '.[0] * .[1]' "$settings" "$DIR/.claude/settings.json" > "$settings.tmp" && mv "$settings.tmp" "$settings"
 echo "dotfiles: merged Claude Code settings"
+link .claude/CLAUDE.md "$HOME/.claude/CLAUDE.md"
+
+# 4. The private half (Claude memories, internal settings): ssaunier/refrag-coder, skipped if unreachable.
+private="$HOME/.refrag-coder"
+[ -d "$private" ] || git clone -q https://github.com/ssaunier/refrag-coder.git "$private" 2>/dev/null || true
+if [ -f "$private/install.sh" ]; then bash "$private/install.sh"; else echo "dotfiles: no access to ssaunier/refrag-coder, skipping" >&2; fi
